@@ -10,11 +10,33 @@
 <body>
   <img src="/pictures/logo2.png" class="img-fluid mx-auto d-block rounded logo" alt="">
   <div class="form">
-    <input type="text" name="" value="" class="form-control search-box" placeholder="Enter Query">
-    <button type="button" class="btn btn-info">SEARCH</button>
+    <input id="searchBox" type="text" list="queries" value="" class="form-control search-box" placeholder="Enter Query">
+    <button type="button" class="btn btn-info" onclick="search()">SEARCH</button>
+    <datalist id="queries">
   </div>
-  <script type="text/javascript" src="/js/search.js"> </script>
+  <div id="tableDiv">
+    <div class="d-flex justify-content-center align-items-center tbl">
+      <table class="table table-bordered table-hover table-dark ctable" id="searchResults">
+      <thead>
+        <tr>
+          <th scope="col">No. Document</th>
+          <th scope="col">Title</th>
+          <th scope="col">Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div id="docDiv" style="display: none">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <p id="docContent" class="text-white docIfo"></p>
+      <button class="btn btn-info" type="button" onclick="toggleResults()">SHOW SEARCH RESULTS</button>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/js/search.js"> </script>
   </body>
 </html>

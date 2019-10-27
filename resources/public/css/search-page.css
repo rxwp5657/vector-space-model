@@ -7,7 +7,7 @@ body {
 }
 
 .logo {
-  width: 25%;
+  width: 20%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -24,4 +24,20 @@ body {
   align-items: center;
   justify-content:center;
   margin-top: 35px;
+}
+
+.ctable {
+  width: 49%;
+  margin-top: 15px;
+}
+
+.tCell:hover {
+  cursor: pointer;
+  background-color: purple;
+}
+
+.docIfo {
+  margin-top: 30px;
+  width: 50%;
+  text-align: justify
 }

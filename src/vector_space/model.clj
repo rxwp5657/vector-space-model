@@ -6,7 +6,9 @@
   (let [posting-list (:lst ((keyword word) (:dictionary index)))
         number-docs (:num-files index)
         dft (count posting-list)]
-    (Math/log10 (/ number-docs dft))))
+    (if (= dft 0)
+      0
+      (Math/log10 (/ number-docs dft)))))
 
 (defn dot
   "Dot product"
@@ -56,4 +58,4 @@
 (defn get-ranked-documents
   [index query]
   (let [ranked-v (ranked-values index query)]
-    (map #((keyword (:id %)) (:file-data index)) ranked-v)))
+    (map #(hash-map :title ((keyword (:id %)) (:file-data index)) :id (:id %) :rank (:rank %)) ranked-v)))
