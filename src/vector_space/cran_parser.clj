@@ -27,7 +27,7 @@
   [strucure line]
   (update strucure :buffer #(conj % (str " " line))))
 
-(defn process-line
+(defn- process-line
   "Given a line set the data structure to the state:
    id, title, author, content or something and add the data
    to the correspoinding field"

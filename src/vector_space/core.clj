@@ -10,11 +10,26 @@
   (use vector-space.cran-parser)
   (use vector-space.index)
   (use vector-space.model)
+  (use vector-space.relevant)
   (use ring.util.response))
 
-(def file-data    (parse-cran-file "cran.all.1400"))
-(def index        (make-index file-data))
-(def test-queries (let [queries (parse-cran-file "cran.qry")] (map #(hash-map :num %1, :q %2) (:ids queries) (:content queries))))
+(def file-data     (parse-cran-file "cran.all.1400"))
+(def index         (make-index file-data))
+(def test-queries  (let [queries (parse-cran-file "cran.qry")] (map #(hash-map :num %1, :q %2) (:ids queries) (:content queries))))
+(def relevant-docs (parse-relevant-file "cranqrel"))
+
+;;(defn get-query-pr
+;;  [query-map]
+;;  (let [query     (:q query-map)
+;;        query-num (:num query-map)
+;;        search-results (get-ranked-documents index query)
+;;        query-pr (query-precision-recall relevant-docs query-num search-results)
+;;    query-pr)
+
+;;(defn get-10-query-data [] (map #(get-query-pr %) (take 10 test-queries)))
+;;(defn write-pr [precision-recall] (spit "Precision-Recall.txt" (with-out-str (pr (:precision precision-recall) (:recall precision-recall))) :append true))
+;;(defn write-data [] (doseq [data (get-10-query-data)] (write-pr data)))
+;;(write-data)
 
 (defn document-by-id
   [id]

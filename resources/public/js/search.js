@@ -1,10 +1,23 @@
+const toggleImg = () => {
+  let table  = document.getElementById("tableDiv")
+  let imgDiv = document.getElementById("imgDiv")
+  table.style.display = "none";
+  imgDiv.style.display= "block";
+}
+
+const toggleResultsImg = () => {
+  let table  = document.getElementById("tableDiv")
+  let imgDiv = document.getElementById("imgDiv")
+  table.style.display = "block";
+  imgDiv.style.display= "none";
+}
+
 const toggleResults = () => {
   let table  = document.getElementById("tableDiv")
   let docDiv = document.getElementById("docDiv")
   table.style.display = "block";
   docDiv.style.display= "none";
 }
-
 
 const addRowEvent = () => {
   let rows = document.getElementsByTagName("tr");

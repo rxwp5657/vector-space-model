@@ -11,7 +11,8 @@
   <img src="/pictures/logo2.png" class="img-fluid mx-auto d-block rounded logo" alt="">
   <div class="form">
     <input id="searchBox" type="text" list="queries" value="" class="form-control search-box" placeholder="Enter Query">
-    <button type="button" class="btn btn-info" onclick="search()">SEARCH</button>
+    <button type="button" class="btn btn-info mr-2" onclick="search()">SEARCH</button>
+    <button type="button" class="btn btn-info" onclick="toggleImg()">Precision-Recall</button>
     <datalist id="queries">
   </div>
   <div id="tableDiv">
@@ -32,7 +33,13 @@
   <div id="docDiv" style="display: none">
     <div class="d-flex flex-column justify-content-center align-items-center">
       <p id="docContent" class="text-white docIfo"></p>
-      <button class="btn btn-info" type="button" onclick="toggleResults()">SHOW SEARCH RESULTS</button>
+      <button class="btn btn-info mb-5" type="button" onclick="toggleResults()">SHOW SEARCH RESULTS</button>
+    </div>
+  </div>
+  <div id="imgDiv" style="display: none">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <img src="/pictures/average.png" alt="" class="results">
+      <button class="btn btn-info mb-5" type="button" onclick="toggleResultsImg()">SHOW SEARCH RESULTS</button>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
